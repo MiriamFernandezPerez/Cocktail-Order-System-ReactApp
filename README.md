@@ -1,70 +1,114 @@
-# Getting Started with Create React App
+# 🍹 Cocktail Order System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Bienvenido a **Cocktail Order System**, una aplicación web desarrollada con React que permite a los usuarios explorar, seleccionar y realizar pedidos de cócteles, mientras que el personal del bar o restaurante puede gestionar los pedidos de manera eficiente. 🥂
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🎯 Propósito
 
-### `npm start`
+Esta aplicación tiene dos objetivos principales:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. **Clientes**: Explorar y ordenar cócteles según categoría, búsqueda alfabética o selecciones destacadas.
+2. **Personal del bar**: Gestionar los pedidos entrantes, siguiendo su ciclo de vida desde pendiente → atendido → pagado.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+La aplicación integra la **API de TheCocktailDB** para obtener datos de bebidas y **Firebase** para persistencia de pedidos, asegurando un flujo completo de gestión de pedidos.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🛠 Pila técnica
 
-### `npm run build`
+La aplicación está construida con tecnologías modernas de desarrollo web:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **React**: Biblioteca de UI basada en componentes.
+- **react-router-dom**: Navegación multipágina del lado del cliente.
+- **axios**: Cliente HTTP para llamadas a TheCocktailDB.
+- **Firebase**: Backend como servicio para la gestión de pedidos.
+- **react-bootstrap**: Componentes de interfaz adaptables.
+- **styled-components**: Estilos CSS-in-JS para componentes.
+- **@fortawesome**: Iconos para mejorar la UI.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🗂 Estructura de la aplicación
 
-### `npm run eject`
+src/
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+├── pages/ # Páginas principales asignadas a rutas (Category, Search, Selection, Tpv)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+├── components/ # Componentes reutilizables (Header, Navbar, Footer, Card, Button)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+├── useContext/ # Gestión de estados globales con React Context
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+├── app/firebase/ # Integración con Firebase (CRUD)
 
-## Learn More
+├── img/ # Imágenes y activos estáticos
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+public/ # Archivos públicos (index.html, favicon)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Cada componente sigue el patrón **ComponentName.jsx + ComponentName.styles.js** para separar la lógica y los estilos.
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🔄 Flujo de aplicación
 
-### Making a Progressive Web App
+1. El cliente añade bebidas a su pedido.
+2. El estado del pedido se actualiza en **DataContext**.
+3. Se sincroniza con **localStorage** para persistencia.
+4. El personal gestiona el pedido desde la página TPV.
+5. Una vez completado, el pedido se marca como pagado en Firebase.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## 🌐 Integración de servicios externos
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+| Servicio           | Función                                      |
+|-------------------|---------------------------------------------|
+| **TheCocktailDB** | Obtención de datos de cócteles (categorías, recetas, imágenes) |
+| **Firebase**       | Persistencia de pedidos y estados de pago  |
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 📦 Instalación
 
-### `npm run build` fails to minify
+1. Clonar el repositorio:
+```bash
+git clone https://github.com/MiriamFernandezPerez/cocktail-order-system.git
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+2. nstalar dependencias:
+```bash
+npm install
+```
+
+3. Iniciar la aplicación:
+```bash
+npm start
+```
+
+Abre http://localhost:3000 en tu navegador.
+
+## 🧩 Funciones principales
+
+- Explorar cócteles por **categoría, búsqueda o selección**.
+- Añadir bebidas al **carrito de pedidos**.
+- Gestión de pedidos mediante **página TPV**.
+- Persistencia de pedidos y sincronización con **Firebase**.
+- Interfaz adaptativa con **Bootstrap** y **Styled-Components**.
+- Iconos interactivos con **FontAwesome**.
+
+## 📖 Próximos pasos
+
+Para más información sobre la arquitectura, patrones de estado o integración de API:
+
+- Consulta los archivos en `src/useContext/` para **gestión de estado global**.
+- Revisa `src/app/firebase/api.js` para **operaciones CRUD en Firebase**.
+- Explora los componentes de `src/components/` para **UI y estilos**.
+
+## 🍸 Autor
+
+**Miriam Fernández Pérez**
+
+Un sistema completo de pedidos de cócteles que une clientes y personal de bar en una experiencia fluida y moderna. ✨
