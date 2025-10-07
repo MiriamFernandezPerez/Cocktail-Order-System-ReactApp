@@ -99,6 +99,10 @@ Abre http://localhost:3000 en tu navegador.
 - Interfaz adaptativa con **Bootstrap** y **Styled-Components**.
 - Iconos interactivos con **FontAwesome**.
 
+## 🍸 Muestra de carta y pedido
+  <img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/4c7fafd8-108c-4e9e-b76a-a2d57280179a" />
+
+
 ## 📖 Próximos pasos
 
 Para más información sobre la arquitectura, patrones de estado o integración de API:
